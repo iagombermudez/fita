@@ -1,0 +1,23 @@
+.workout-card {
+  background-color: var(--container-color);
+  color: #fff;
+  margin: 0.75rem 0;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0.25rem 0;
+}
+
+.card-buttons {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
