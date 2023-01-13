@@ -1,5 +1,5 @@
 import React from "react";
-import PrimaryButton from "../utils/PrimaryButton/PrimaryButton";
+import PrimaryButton from "../../utils/PrimaryButton/PrimaryButton";
 import "./styles.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
