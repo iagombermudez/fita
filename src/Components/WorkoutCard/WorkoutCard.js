@@ -1,7 +1,8 @@
 import React from "react";
 import PrimaryButton from "../../utils/PrimaryButton/PrimaryButton";
-import "./styles.css";
+import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import "./styles.css";
 
 export default function WorkoutCard() {
   return (
@@ -16,7 +17,9 @@ export default function WorkoutCard() {
           scrambled it to make a type specimen book.{" "}
         </p>
         <div className="card-buttons">
-          <PrimaryButton />
+          <Link to="1">
+            <PrimaryButton />
+          </Link>
           <FavoriteBorderIcon />
         </div>
       </div>

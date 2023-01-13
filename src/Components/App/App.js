@@ -7,6 +7,7 @@ import TopWorkoutsPage from "../../pages/TopWorkoutsPage/TopWorkoutsPage";
 import SchedulePage from "../../pages/SchedulePage/SchedulePage";
 import ProfilePage from "../../pages/ProfilePage/ProfilePage";
 import "./styles.css";
+import WorkoutPage from "../../pages/WorkoutPage/WorkoutPage";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="myWorkouts/" element={<MyWorkoutsPage />} />
           <Route path="schedule/" element={<SchedulePage />} />
           <Route path="profile/" element={<ProfilePage />} />
+          <Route path="myWorkouts/1" element={<WorkoutPage />} />
         </Routes>
       </div>
     </div>
