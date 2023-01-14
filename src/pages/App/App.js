@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "../../utils/Navbar/Navbar";
-import MyWorkoutsPage from "../../pages/MyWorkoutsPage/MyWorkoutsPage";
-import HomePage from "../../pages/HomePage/HomePage";
-import TopWorkoutsPage from "../../pages/TopWorkoutsPage/TopWorkoutsPage";
-import SchedulePage from "../../pages/SchedulePage/SchedulePage";
-import ProfilePage from "../../pages/ProfilePage/ProfilePage";
+import MyWorkoutsPage from "../MyWorkoutsPage/MyWorkoutsPage";
+import HomePage from "../HomePage/HomePage";
+import TopWorkoutsPage from "../TopWorkoutsPage/TopWorkoutsPage";
+import SchedulePage from "../SchedulePage/SchedulePage";
+import ProfilePage from "../ProfilePage/ProfilePage";
 import "./styles.css";
-import WorkoutPage from "../../pages/WorkoutPage/WorkoutPage";
+import WorkoutPage from "../WorkoutPage/WorkoutPage";
 
 export default function App() {
   return (

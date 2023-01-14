@@ -1,0 +1,23 @@
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--container-color);
+  justify-content: space-between;
+  height: fit-content;
+  color: var(--gray-font-color);
+  padding: 0 1rem;
+}
+
+.accordion-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.accordion-toggle-icon {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--gray-font-color);
+}

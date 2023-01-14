@@ -4,10 +4,24 @@ import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./styles.css";
 
-export default function WorkoutCard() {
+export default function WorkoutCard(props) {
+  const { imageSize = "medium" } = props;
+
+  function getWorkoutImage() {
+    switch (imageSize) {
+      case "small":
+        return <img src="https://via.placeholder.com/144X81" />;
+      case "large":
+        return <img src="https://via.placeholder.com/320X180" />;
+      case "medium":
+      default:
+        return <img src="https://via.placeholder.com/256X144" />;
+    }
+  }
+
   return (
     <div className="workout-card">
-      <img src="https://via.placeholder.com/256X144" />
+      {getWorkoutImage()}
       <div className="card-body">
         <h3>KILLER HIIT Workout by @really_cool_trainer</h3>
         <p>
