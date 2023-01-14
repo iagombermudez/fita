@@ -1,4 +1,4 @@
-.workout-card {
+.workoutCard {
   background-color: var(--container-color);
   color: #fff;
   margin: 0.75rem 0;
@@ -9,15 +9,20 @@
   gap: 1.25rem;
 }
 
-.card-body {
+.cardBody {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin: 0.25rem 0;
 }
 
-.card-buttons {
+.cardButtons {
   margin-top: auto;
   display: flex;
   align-items: center;
+}
+
+.moreInfoLink {
+  cursor: pointer;
+  margin-right: 2rem;
 }

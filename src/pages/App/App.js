@@ -6,12 +6,12 @@ import HomePage from "../HomePage/HomePage";
 import TopWorkoutsPage from "../TopWorkoutsPage/TopWorkoutsPage";
 import SchedulePage from "../SchedulePage/SchedulePage";
 import ProfilePage from "../ProfilePage/ProfilePage";
-import "./styles.css";
 import WorkoutPage from "../WorkoutPage/WorkoutPage";
+import styles from "./App.module.css";
 
 export default function App() {
   return (
-    <div id="app">
+    <div id={styles.app}>
       <Navbar />
       <div>
         <Routes>

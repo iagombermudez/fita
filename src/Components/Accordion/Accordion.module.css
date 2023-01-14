@@ -1,4 +1,4 @@
-.accordion-container {
+.accordionContainer {
   display: flex;
   flex-direction: column;
   background-color: var(--container-color);
@@ -8,14 +8,14 @@
   padding: 0 1rem;
 }
 
-.accordion-header-container {
+.accordionHeaderContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.accordion-toggle-icon {
+.accordionToggleIcon {
   cursor: pointer;
   border: none;
   background: none;

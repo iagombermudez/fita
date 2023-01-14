@@ -1,7 +1,11 @@
-.nav-link {
+.navLink {
   display: flex;
   align-items: center;
   color: #fff;
   gap: 1.25rem;
   margin: 1.5rem 0;
+}
+
+#selected > * {
+  color: var(--main-color);
 }

@@ -2,10 +2,10 @@ import React from "react";
 import PrimaryButton from "../../utils/PrimaryButton/PrimaryButton";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import "./styles.css";
+import styles from "./WorkoutCard.module.css";
 
 export default function WorkoutCard(props) {
-  const { imageSize = "medium" } = props;
+  const { imageSize = "medium", showInfo = true } = props;
 
   function getWorkoutImage() {
     switch (imageSize) {
@@ -20,9 +20,9 @@ export default function WorkoutCard(props) {
   }
 
   return (
-    <div className="workout-card">
+    <div className={styles.workoutCard}>
       {getWorkoutImage()}
-      <div className="card-body">
+      <div className={styles.cardBody}>
         <h3>KILLER HIIT Workout by @really_cool_trainer</h3>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -30,10 +30,12 @@ export default function WorkoutCard(props) {
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.{" "}
         </p>
-        <div className="card-buttons">
-          <Link to="1">
-            <PrimaryButton />
-          </Link>
+        <div className={styles.cardButtons}>
+          {showInfo && (
+            <Link to="1" className={styles.moreInfoLink}>
+              <PrimaryButton />
+            </Link>
+          )}
           <FavoriteBorderIcon />
         </div>
       </div>

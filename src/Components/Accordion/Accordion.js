@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import "./styles.css";
+import styles from "./Accordion.module.css";
 
 export default function Accordion(props) {
   const { header, body } = props;
@@ -12,10 +12,13 @@ export default function Accordion(props) {
   }
 
   return (
-    <div className="accordion-container">
-      <div className="accordion-header-container">
+    <div className={styles.accordionContainer}>
+      <div className={styles.accordionHeaderContainer}>
         {header}
-        <button onClick={handleAccordionOpen} className="accordion-toggle-icon">
+        <button
+          onClick={handleAccordionOpen}
+          className={styles.accordionToggleIcon}
+        >
           {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
         </button>
       </div>

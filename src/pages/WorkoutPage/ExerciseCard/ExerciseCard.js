@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Accordion from "../../../components/Accordion/Accordion";
-import "./styles.css";
+import styles from "./ExerciseCard.module.css";
 
 export default function ExerciseCard(props) {
   const { index, image, imageSize = "small", title } = props;
@@ -20,15 +20,15 @@ export default function ExerciseCard(props) {
   }
 
   const exerciseHeader = (
-    <div className="header-title">
-      <div className="exercise-index">{index}</div>
-      <div className="image-wrapper">{getWorkoutImage()}</div>
+    <div className={styles.headerTitle}>
+      <div className={styles.exerciseIndex}>{index}</div>
+      <div className={styles.imageWrapper}>{getWorkoutImage()}</div>
       <p>{title}</p>
     </div>
   );
 
   const exerciseBody = (
-    <div className="body-container">
+    <div className={styles.bodyContainer}>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
         cupiditate eos ipsam! Impedit, ducimus dolor. Illo numquam in ea minus.

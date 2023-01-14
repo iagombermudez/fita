@@ -5,8 +5,8 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Link } from "react-router-dom";
-import "./styles.css";
 import NavbarLink from "../../components/NavbarLink/NavbarLink";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const links = [
@@ -34,12 +34,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav id="navbar">
-      <div id="navbar-container">
-        <div id="logo">
+    <nav id={styles.navbar}>
+      <div id={styles.navbarContainer}>
+        <div id={styles.logo}>
           <Link to="/">FITAPP</Link>
         </div>
-        <ul id="link-list">{links.map((link) => link)}</ul>
+        <ul id={styles.linkList}>{links.map((link) => link)}</ul>
       </div>
     </nav>
   );

@@ -1,13 +1,20 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./styles.css";
+import styles from "./NavbarLink.module.css";
 
 export default function NavbarLink(props) {
+  const { icon, url, address } = props;
   const path = useLocation().pathname;
 
-  const { icon, url, address } = props;
+  function isSelected(path, url) {
+    return path.split("/")[1] === url.split("/")[1];
+  }
+
   return (
-    <li className="nav-link" id={path === url && "selected"}>
+    <li
+      className={styles.navLink}
+      id={isSelected(path, url) && styles.selected}
+    >
       {icon}
       <Link to={url}>{address}</Link>
     </li>

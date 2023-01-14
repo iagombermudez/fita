@@ -1,23 +1,23 @@
-.header-title {
+.headerTitle {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.body-container {
+.bodyContainer {
   padding: 1rem 0;
 }
 
-.exercise-index {
+.exerciseIndex {
   font-size: 1rem;
 }
 
-.image-wrapper {
+.imageWapper {
   display: inline-block;
   height: 100%;
 }
 
-.image-wrapper img {
+.imageWrapper img {
   height: 100%;
   width: 100%;
   object-fit: contain;
