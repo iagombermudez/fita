@@ -1,5 +1,5 @@
 import React from "react";
-import WorkoutsContainer from "../../components/WorkoutsContainer/WorkoutsContainer";
+import WorkoutsContainer from "./WorkoutsContainer/WorkoutsContainer";
 import "./styles.css";
 
 export default function MyWorkoutsPage() {

@@ -1,5 +1,5 @@
 import React from "react";
-import WorkoutCard from "../../components/WorkoutCard/WorkoutCard";
+import WorkoutCard from "../../../components/WorkoutCard/WorkoutCard";
 import "./styles.css";
 
 export default function WorkoutsContainer() {
