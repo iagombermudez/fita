@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "../../utils/Navbar/Navbar";
 import MyWorkoutsPage from "../MyWorkoutsPage/MyWorkoutsPage";
 import HomePage from "../HomePage/HomePage";
@@ -8,11 +8,25 @@ import SchedulePage from "../SchedulePage/SchedulePage";
 import ProfilePage from "../ProfilePage/ProfilePage";
 import WorkoutPage from "../WorkoutPage/WorkoutPage";
 import styles from "./App.module.css";
+import LoginPage from "../LoginPage/LoginPage";
 
 export default function App() {
+  function showNavbar() {
+    const path = window.location.pathname;
+    switch (path) {
+      case "/":
+      case "/topWorkouts":
+      case "/myWorkouts":
+      case "/schedule":
+      case "/profile":
+      case "/myWorkouts/1":
+        return <Navbar />;
+    }
+  }
+
   return (
     <div id={styles.app}>
-      <Navbar />
+      {showNavbar()}
       <div>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -21,6 +35,7 @@ export default function App() {
           <Route path="schedule/" element={<SchedulePage />} />
           <Route path="profile/" element={<ProfilePage />} />
           <Route path="myWorkouts/1" element={<WorkoutPage />} />
+          <Route path="login" element={<LoginPage />} />
         </Routes>
       </div>
     </div>

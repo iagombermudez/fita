@@ -1,3 +1,17 @@
 #container {
   margin: 2rem 1.25rem;
 }
+
+.formContainer {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.centeredIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}

@@ -1,0 +1,20 @@
+.formButton {
+  width: 100%;
+  font-weight: 600;
+  gap: 0.25rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filled {
+  background-color: var(--main-color);
+  border: none;
+  color: #000;
+}
+
+.outlined {
+  background: None;
+  border: 1px solid var(--gray-font-color);
+  color: var(--main-color);
+}

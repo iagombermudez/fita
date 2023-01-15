@@ -2,6 +2,7 @@ import React from "react";
 import ExerciseCard from "./ExerciseCard/ExerciseCard";
 import WorkoutCard from "../../components/WorkoutCard/WorkoutCard";
 import commonStyles from "../../utils/Styles/commonStyles.module.css";
+import styles from "./WorkoutPage.module.css";
 
 export default function WorkoutPage() {
   return (
@@ -9,9 +10,24 @@ export default function WorkoutPage() {
       <h1 style={{ color: "#39ff13" }}>My Workouts</h1>
       <div id="workout-container">
         <WorkoutCard imageSize="large" showInfo={false} />
-        <div id="exercises-container">
+        <div id={styles.exercisesContainer}>
           <ExerciseCard
             index="1"
+            image=""
+            title="High Intensity Bike Ride (45 seconds)"
+          />
+          <ExerciseCard
+            index="2"
+            image=""
+            title="High Intensity Bike Ride (45 seconds)"
+          />
+          <ExerciseCard
+            index="3"
+            image=""
+            title="High Intensity Bike Ride (45 seconds)"
+          />
+          <ExerciseCard
+            index="4"
             image=""
             title="High Intensity Bike Ride (45 seconds)"
           />
