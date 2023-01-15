@@ -3,7 +3,7 @@ import TextInput from "../../../components/TextInput/TextInput";
 import GoogleIcon from "@mui/icons-material/Google";
 import commonStyles from "../../../utils/Styles/commonStyles.module.css";
 import styles from "./LoginForm.module.css";
-import FormButton from "../../../components/FormButton/FormButton";
+import FormButton from "../../../components/buttons/FormButton/FormButton";
 
 export default function LoginForm() {
   return (
