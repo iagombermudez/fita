@@ -1,5 +1,5 @@
 import React from "react";
-import PrimaryButton from "../../utils/PrimaryButton/PrimaryButton";
+import PrimaryButton from "../buttons/PrimaryButton/PrimaryButton";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import styles from "./WorkoutCard.module.css";

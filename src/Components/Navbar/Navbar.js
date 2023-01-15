@@ -5,7 +5,7 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Link } from "react-router-dom";
-import NavbarLink from "../../components/NavbarLink/NavbarLink";
+import NavbarLink from "../NavbarLink/NavbarLink";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {

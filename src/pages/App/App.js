@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Navbar from "../../utils/Navbar/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
 import MyWorkoutsPage from "../MyWorkoutsPage/MyWorkoutsPage";
 import HomePage from "../HomePage/HomePage";
 import TopWorkoutsPage from "../TopWorkoutsPage/TopWorkoutsPage";
