@@ -4,30 +4,41 @@ import GoogleIcon from "@mui/icons-material/Google";
 import commonStyles from "../../../utils/Styles/commonStyles.module.css";
 import styles from "./LoginForm.module.css";
 import FormButton from "../../../components/buttons/FormButton/FormButton";
-import { login } from "../../../services/user";
+import { login } from "../../../services/userApi";
 import { useNavigate } from "react-router-dom";
 import { HOME_PAGE_URL } from "../../../utils/routes";
+import { IUser } from "../../../common/types";
+import { User } from "../../../common/classes/User";
 
 export default function LoginForm() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  // const [user, setUser] = useState();
 
   const navigate = useNavigate();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
-      // const user = await login({ username, password });
-      // setUser(user);
-      setUsername("");
-      setPassword("");
-
-      // window.localStorage.setItem("loggedUser", JSON.stringify(user));
-
-      navigate(HOME_PAGE_URL);
+      await authenticateUser();
     } catch (exception) {
       console.log(exception);
+    }
+  }
+
+  async function authenticateUser() {
+    const response = await login({ username, password });
+    const user = new User(
+      response!.data.firstName,
+      response!.data.lastName,
+      response!.data.username,
+      response!.data.email,
+      response!.data.token
+    );
+    setUsername("");
+    setPassword("");
+    if (response!.status === 200) {
+      window.localStorage.setItem("loggedUser", JSON.stringify(user));
+      navigate(HOME_PAGE_URL);
     }
   }
 
