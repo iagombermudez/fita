@@ -5,3 +5,4 @@ export const SCHEDULE_URL = "schedule/";
 export const PROFILE_URL = "profile/";
 export const MY_WORKOUTS_INDEX_URL = "myWorkouts/1";
 export const LOGIN_URL = "login/";
+export const CREATE_WORKOUT_URL = "createWorkout/";

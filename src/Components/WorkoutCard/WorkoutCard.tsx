@@ -38,7 +38,7 @@ export default function WorkoutCard(props: Props) {
         <div className={styles.cardButtons}>
           {showInfo && (
             <Link to="1" className={styles.moreInfoLink}>
-              <PrimaryButton />
+              <PrimaryButton text="+ INFO" />
             </Link>
           )}
           <FavoriteBorderIcon />

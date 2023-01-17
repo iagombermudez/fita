@@ -1,7 +1,7 @@
 import React from "react";
 import ExerciseCard from "./ExerciseCard/ExerciseCard";
 import WorkoutCard from "../../components/WorkoutCard/WorkoutCard";
-import commonStyles from "../../utils/Styles/commonStyles.module.css";
+import commonStyles from "../../common/Styles/commonStyles.module.css";
 import styles from "./WorkoutPage.module.css";
 
 export default function WorkoutPage() {

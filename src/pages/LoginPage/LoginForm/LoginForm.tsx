@@ -1,13 +1,12 @@
 import React, { FormEvent, useState } from "react";
 import TextInput from "../../../components/TextInput/TextInput";
 import GoogleIcon from "@mui/icons-material/Google";
-import commonStyles from "../../../utils/Styles/commonStyles.module.css";
+import commonStyles from "../../../common/Styles/commonStyles.module.css";
 import styles from "./LoginForm.module.css";
 import FormButton from "../../../components/buttons/FormButton/FormButton";
 import { login } from "../../../services/userApi";
 import { useNavigate } from "react-router-dom";
-import { HOME_PAGE_URL } from "../../../utils/routes";
-import { IUser } from "../../../common/types";
+import { HOME_PAGE_URL } from "../../../common/routes";
 import { User } from "../../../common/classes/User";
 
 export default function LoginForm() {
