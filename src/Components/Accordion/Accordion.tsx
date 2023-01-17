@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import styles from "./Accordion.module.css";
 
-export default function Accordion(props) {
+interface Props {
+  header: JSX.Element;
+  body: JSX.Element;
+}
+export default function Accordion(props: Props) {
   const { header, body } = props;
-  const [open, setOpen] = useState();
+  const [open, setOpen] = useState(false);
 
   function handleAccordionOpen() {
     setOpen(!open);

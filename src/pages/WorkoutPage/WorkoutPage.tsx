@@ -13,22 +13,18 @@ export default function WorkoutPage() {
         <div id={styles.exercisesContainer}>
           <ExerciseCard
             index="1"
-            image=""
             title="High Intensity Bike Ride (45 seconds)"
           />
           <ExerciseCard
             index="2"
-            image=""
             title="High Intensity Bike Ride (45 seconds)"
           />
           <ExerciseCard
             index="3"
-            image=""
             title="High Intensity Bike Ride (45 seconds)"
           />
           <ExerciseCard
             index="4"
-            image=""
             title="High Intensity Bike Ride (45 seconds)"
           />
         </div>

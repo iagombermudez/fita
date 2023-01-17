@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import Accordion from "../../../components/Accordion/Accordion";
 import styles from "./ExerciseCard.module.css";
 
-export default function ExerciseCard(props) {
+interface Props {
+  index: string;
+  image?: JSX.Element;
+  imageSize?: string;
+  title?: string;
+}
+
+export default function ExerciseCard(props: Props) {
   const { index, image, imageSize = "small", title } = props;
 
-  const [open, setOpen] = useState();
+  const [open, setOpen] = useState<boolean>(false);
 
   function getWorkoutImage() {
     switch (imageSize) {

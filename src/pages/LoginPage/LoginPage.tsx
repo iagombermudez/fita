@@ -6,7 +6,7 @@ export default function LoginPage() {
   return (
     <div className={styles.container}>
       <div className={`${styles.column} ${styles.backgroundImage}`} />
-      <LoginForm className={styles.column} />
+      <LoginForm />
     </div>
   );
 }

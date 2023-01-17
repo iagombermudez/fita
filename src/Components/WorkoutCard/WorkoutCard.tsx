@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import styles from "./WorkoutCard.module.css";
 
-export default function WorkoutCard(props) {
+interface Props {
+  imageSize?: string;
+  showInfo?: boolean;
+}
+
+export default function WorkoutCard(props: Props) {
   const { imageSize = "medium", showInfo = true } = props;
 
   function getWorkoutImage() {
