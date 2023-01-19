@@ -1,6 +1,7 @@
 .container {
   margin: 2rem 1.25rem;
   width: 100%;
+  color: var(--gray-font-color);
 }
 
 .formContainer {

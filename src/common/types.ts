@@ -10,3 +10,8 @@ export interface IUser {
   email: string;
   token: string;
 }
+
+export type AutocompleteInput = {
+  label: string;
+  id: number;
+};

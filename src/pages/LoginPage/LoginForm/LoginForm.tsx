@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import TextInput from "../../../components/TextInput/TextInput";
+import TextInput from "../../../components/inputs/TextInput";
 import GoogleIcon from "@mui/icons-material/Google";
 import commonStyles from "../../../common/Styles/commonStyles.module.css";
 import styles from "./LoginForm.module.css";

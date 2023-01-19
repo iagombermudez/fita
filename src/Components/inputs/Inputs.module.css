@@ -9,4 +9,17 @@
   border-radius: 2px;
   height: 2.5rem;
   color: var(--gray-font-color);
+  word-wrap: break-word;
+  word-break: break-all;
+  resize: none;
+}
+
+.textField {
+  color: rgba(0, 0, 0, 0);
+}
+
+.autocomplete {
+  color: "purple";
+  border-color: var(--gray-font-color);
+  margin: 1rem 0;
 }
