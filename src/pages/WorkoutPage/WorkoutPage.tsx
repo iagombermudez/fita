@@ -1,5 +1,5 @@
 import React from "react";
-import ExerciseCard from "./ExerciseCard/ExerciseCard";
+import ExerciseCard from "../../components/ExerciseCard/ExerciseCard";
 import WorkoutCard from "../../components/WorkoutCard/WorkoutCard";
 import commonStyles from "../../common/Styles/commonStyles.module.css";
 import styles from "./WorkoutPage.module.css";

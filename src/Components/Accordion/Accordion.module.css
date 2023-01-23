@@ -1,11 +1,12 @@
 .accordionContainer {
   display: flex;
   flex-direction: column;
-  background-color: var(--container-color);
+  background-color: #9c9c9c;
   justify-content: space-between;
   height: fit-content;
-  color: var(--gray-font-color);
+  color: #000;
   padding: 0 1rem;
+  border-radius: 5px;
 }
 
 .accordionHeaderContainer {
@@ -19,5 +20,4 @@
   cursor: pointer;
   border: none;
   background: none;
-  color: var(--gray-font-color);
 }

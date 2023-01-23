@@ -1,6 +1,6 @@
 import { Difficulty, Exercise } from "../common/classes/Exercise";
 
-export const exercises = [
+export const exercisesMock = [
   new Exercise(
     "Bench Press",
     "This chest focused exercise consists on bla bla bla",

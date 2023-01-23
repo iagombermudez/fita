@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import Accordion from "../../../components/Accordion/Accordion";
+import Accordion from "../Accordion/Accordion";
 import styles from "./ExerciseCard.module.css";
 
 interface Props {
+  selected?: boolean;
   index: string;
   image?: JSX.Element;
   imageSize?: string;
-  title?: string;
+  title: string;
 }
 
 export default function ExerciseCard(props: Props) {
-  const { index, image, imageSize = "small", title } = props;
+  const { selected = false, index, image, imageSize = "small", title } = props;
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -43,9 +44,11 @@ export default function ExerciseCard(props: Props) {
     </div>
   );
 
-  function handleAccordionOpen() {
-    setOpen(!open);
-  }
-
-  return <Accordion header={exerciseHeader} body={exerciseBody} />;
+  return (
+    <Accordion
+      header={exerciseHeader}
+      body={exerciseBody}
+      selected={selected}
+    />
+  );
 }

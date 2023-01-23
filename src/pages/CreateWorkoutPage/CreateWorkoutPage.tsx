@@ -1,4 +1,3 @@
-import { Autocomplete, DialogTitle } from "@mui/material";
 import React, { useState } from "react";
 import { categories } from "../../mocks/workoutCategories";
 
@@ -9,13 +8,16 @@ import TextInput from "../../components/inputs/TextInput";
 import { Button } from "@mui/material";
 import { Box } from "@mui/material";
 import { difficulties } from "../../mocks/workoutDifficulties";
-import { Dialog } from "@mui/material";
-import { DialogContent } from "@mui/material";
-import { DialogContentText } from "@mui/material";
+import AddExercise from "./AddExerciseDialog/AddExercise";
 
 export default function CreateWorkoutPage() {
   const [workoutName, setWorkoutName] = useState<string>("");
   const [workoutDescription, setWorkoutDescription] = useState<string>("");
+  const [addExerciseIsOpen, setAddExerciseIsOpen] = useState<boolean>(false);
+
+  function handleOpenAddExerciseModal() {
+    setAddExerciseIsOpen(!addExerciseIsOpen);
+  }
 
   return (
     <div className={commonStyles.container}>
@@ -42,15 +44,17 @@ export default function CreateWorkoutPage() {
         <OptionPanelInput categories={categories} label={"Categories"} />
         <OptionPanelInput categories={difficulties} label={"Difficulty"} />
         <Box display={"flex"} gap={"0.5rem"}>
-          <Button variant="contained" sx={{ marginLeft: "auto" }}>
+          <Button
+            variant="contained"
+            sx={{ marginLeft: "auto" }}
+            onClick={handleOpenAddExerciseModal}
+          >
             Add an exercise
           </Button>
-          <Dialog open={true} maxWidth={"lg"} fullWidth>
-            <DialogTitle>Select an exercise</DialogTitle>
-            <DialogContent>
-              <DialogContentText>Exercise 1</DialogContentText>
-            </DialogContent>
-          </Dialog>
+          <AddExercise
+            isOpen={addExerciseIsOpen}
+            setIsOpen={setAddExerciseIsOpen}
+          />
           <Button variant="contained">Create workout</Button>
         </Box>
       </div>
