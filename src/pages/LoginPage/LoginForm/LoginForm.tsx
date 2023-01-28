@@ -3,11 +3,11 @@ import TextInput from "../../../components/inputs/TextInput";
 import GoogleIcon from "@mui/icons-material/Google";
 import commonStyles from "../../../common/Styles/commonStyles.module.css";
 import styles from "./LoginForm.module.css";
-import FormButton from "../../../components/buttons/FormButton/FormButton";
 import { login } from "../../../services/userApi";
 import { useNavigate } from "react-router-dom";
 import { HOME_PAGE_URL } from "../../../common/routes";
 import { User } from "../../../common/classes/User";
+import { Button } from "@mui/material";
 
 export default function LoginForm() {
   const [username, setUsername] = useState<string>("");
@@ -61,16 +61,13 @@ export default function LoginForm() {
           text={password}
           setText={setPassword}
         />
-        <FormButton text="SIGN IN" />
+        <Button variant="contained">Sign IN</Button>
         <p className={styles.forgotPassword}>Forgot your password?</p>
-        <FormButton
-          text={
-            <div className={commonStyles.centeredIcon}>
-              <GoogleIcon /> Sign in with Google
-            </div>
-          }
-          outlined={true}
-        />
+        <Button variant="outlined">
+          <div className={commonStyles.centeredIcon}>
+            <GoogleIcon /> Sign in with Google
+          </div>
+        </Button>
       </form>
       <p style={{ marginTop: "0.5rem" }}>
         Don't have an account?{" "}

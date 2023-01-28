@@ -15,12 +15,11 @@ export default function WorkoutExerciseCard(props: Props) {
     <Card>
       <CardContent
         sx={{
-          backgroundColor: "#444",
           display: "flex",
           height: "3rem",
           alignItems: "center",
           justifyContent: "space-between",
-          background: "#888",
+          background: "#444",
           "&:last-child": { padding: "0" },
         }}
       >
@@ -49,6 +48,7 @@ export default function WorkoutExerciseCard(props: Props) {
           </Typography>
         </Box>
         <IconButton
+          sx={{ marginRight: "0.5rem" }}
           onClick={() => handleDeleteWorkoutExercise(workoutExercise)}
         >
           <ClearIcon />

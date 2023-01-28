@@ -1,8 +1,8 @@
 import React from "react";
-import PrimaryButton from "../buttons/PrimaryButton/PrimaryButton";
 import { Link } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import styles from "./WorkoutCard.module.css";
+import { Button } from "@mui/material";
 
 interface Props {
   imageSize?: string;
@@ -38,7 +38,7 @@ export default function WorkoutCard(props: Props) {
         <div className={styles.cardButtons}>
           {showInfo && (
             <Link to="1" className={styles.moreInfoLink}>
-              <PrimaryButton text="+ INFO" />
+              <Button>+ INFO</Button>
             </Link>
           )}
           <FavoriteBorderIcon />
