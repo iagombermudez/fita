@@ -7,28 +7,67 @@ import {
   Typography,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ExerciseCard from "../../../components/ExerciseCard/ExerciseCard";
-import { exercisesMock } from "../../../mocks/exercisesMock";
+import { addExercise, getAllExercises } from "../../../services/exercisesApi";
+import { Exercise, IExercise } from "../../../common/classes/Exercise";
+import {
+  IWorkoutExercise,
+  WorkoutExercise,
+} from "../../../common/classes/WorkoutExercise";
 
 interface Props {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  handleAddExercise: (exercise: IWorkoutExercise) => void;
 }
 
 export default function AddExercise(props: Props) {
+  const [availableExercises, setAvailableExercises] = useState<IExercise[]>([]);
   const [exerciseIsSelected, setExerciseIsSelected] = useState<boolean[]>(
-    initializeArrayToFalse(exercisesMock.length)
+    initializeArrayToFalse(availableExercises.length)
   );
+  const [numRepetitions, setNumRepetitions] = useState<number>(1);
+
+  useEffect(() => {
+    try {
+      getExercises().then((response) => setAvailableExercises(response));
+    } catch (exception) {
+      console.log(exception);
+    }
+  }, []);
+
+  useEffect(() => {
+    initializeArrayToFalse(availableExercises.length);
+  }, [availableExercises]);
 
   function initializeArrayToFalse(length: number) {
     return new Array(length).fill(false);
   }
 
   function handleSelectedExercise(index: number) {
-    let temp = initializeArrayToFalse(exercisesMock.length);
-    temp[index] = true;
+    const indexCurrentValue = exerciseIsSelected[index];
+    let temp = initializeArrayToFalse(availableExercises.length);
+    temp[index] = !indexCurrentValue;
     setExerciseIsSelected(temp);
+  }
+
+  function handleAddExercise() {
+    const index = exerciseIsSelected.indexOf(true);
+    if (index !== -1) {
+      const exerciseToAdd = availableExercises![index];
+      const workoutExercise = new WorkoutExercise(
+        exerciseToAdd,
+        numRepetitions
+      );
+      props.handleAddExercise(workoutExercise);
+      props.setIsOpen(false);
+    }
+  }
+
+  async function getExercises() {
+    const response = await getAllExercises();
+    return response;
   }
 
   function renderDialogBody() {
@@ -67,17 +106,25 @@ export default function AddExercise(props: Props) {
           },
         }}
       >
-        {exercisesMock.map((exercise, index) => {
-          return (
-            <Box onClick={() => handleSelectedExercise(index)}>
-              <ExerciseCard
-                index={""}
-                title={exercise.name}
-                selected={exerciseIsSelected[index]}
-              />
-            </Box>
-          );
-        })}
+        {availableExercises &&
+          availableExercises.map((exercise, index) => {
+            return (
+              <Box>
+                <ExerciseCard
+                  index={index}
+                  exercise={
+                    new Exercise(
+                      exercise.name,
+                      exercise.description,
+                      exercise.difficulty
+                    )
+                  }
+                  selected={exerciseIsSelected[index]}
+                  handleSetSelected={handleSelectedExercise}
+                />
+              </Box>
+            );
+          })}
       </Box>
     );
   }
@@ -133,11 +180,19 @@ export default function AddExercise(props: Props) {
               placeholder="Search"
             />
             <TextField
+              error={numRepetitions <= 0}
               sx={{ width: "100%" }}
               placeholder="Number of repetitions"
+              type="number"
+              value={numRepetitions}
+              onChange={(e) => setNumRepetitions(+e.currentTarget.value)}
             />
           </Box>
-          <Button variant="contained" sx={{ width: "20%" }}>
+          <Button
+            variant="contained"
+            sx={{ width: "20%" }}
+            onClick={handleAddExercise}
+          >
             Add
           </Button>
         </Box>

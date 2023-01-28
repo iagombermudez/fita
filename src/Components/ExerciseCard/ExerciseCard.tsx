@@ -1,46 +1,50 @@
 import React, { useState } from "react";
+import { IExercise } from "../../common/classes/Exercise";
 import Accordion from "../Accordion/Accordion";
 import styles from "./ExerciseCard.module.css";
 
 interface Props {
   selected?: boolean;
-  index: string;
+  index: number;
   image?: JSX.Element;
   imageSize?: string;
-  title: string;
+  exercise: IExercise;
+  handleSetSelected?: (index: number) => void;
 }
 
 export default function ExerciseCard(props: Props) {
-  const { selected = false, index, image, imageSize = "small", title } = props;
-
-  const [open, setOpen] = useState<boolean>(false);
+  const {
+    selected = false,
+    index,
+    image,
+    imageSize = "small",
+    exercise,
+    handleSetSelected,
+  } = props;
 
   function getWorkoutImage() {
     switch (imageSize) {
       case "small":
-        return <img src="https://via.placeholder.com/144X81" alt="" />;
+        return <img src="https://via.placeholder.com/144x81" alt="" />;
       case "large":
-        return <img src="https://via.placeholder.com/320X180" alt="" />;
+        return <img src="https://via.placeholder.com/320x180" alt="" />;
       case "medium":
       default:
-        return <img src="https://via.placeholder.com/256X144" alt="" />;
+        return <img src="https://via.placeholder.com/256x144" alt="" />;
     }
   }
 
   const exerciseHeader = (
     <div className={styles.headerTitle}>
-      <div className={styles.exerciseIndex}>{index}</div>
+      <div className={styles.exerciseIndex}>{index + 1}</div>
       <div className={styles.imageWrapper}>{getWorkoutImage()}</div>
-      <p>{title}</p>
+      <p>{exercise.name}</p>
     </div>
   );
 
   const exerciseBody = (
     <div className={styles.bodyContainer}>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-        cupiditate eos ipsam! Impedit, ducimus dolor. Illo numquam in ea minus.
-      </p>
+      <p>{exercise.description}</p>
     </div>
   );
 
@@ -49,6 +53,8 @@ export default function ExerciseCard(props: Props) {
       header={exerciseHeader}
       body={exerciseBody}
       selected={selected}
+      index={index}
+      handleSetSelected={handleSetSelected}
     />
   );
 }

@@ -1,4 +1,4 @@
-interface IExercise {
+export interface IExercise {
   name: string;
   description: string;
   difficulty: Difficulty;

@@ -15,12 +15,12 @@ export default function WorkoutCard(props: Props) {
   function getWorkoutImage() {
     switch (imageSize) {
       case "small":
-        return <img src="https://via.placeholder.com/144X81" />;
+        return <img src="https://via.placeholder.com/144x81" />;
       case "large":
-        return <img src="https://via.placeholder.com/320X180" />;
+        return <img src="https://via.placeholder.com/320x180" />;
       case "medium":
       default:
-        return <img src="https://via.placeholder.com/256X144" />;
+        return <img src="https://via.placeholder.com/256x144" />;
     }
   }
 
